@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
     private void Movement()
     {
         //Extra gravity
-        rb.AddForce(Vector3.down * (Time.deltaTime * 10));
+        rb.AddForce(Vector3.down * Time.deltaTime * 10);
 
         //Find actual velocity relative to where player is looking
         Vector2 mag = FindVelRelativeToLook();
@@ -144,7 +144,7 @@ public class PlayerMovement : MonoBehaviour
         //If sliding down a ramp, add force down so player stays grounded and also builds speed
         if (crouching && grounded && readyToJump)
         {
-            rb.AddForce(Vector3.down * (Time.deltaTime * 3000));
+            rb.AddForce(Vector3.down * Time.deltaTime * 3000);
             return;
         }
 
@@ -168,8 +168,8 @@ public class PlayerMovement : MonoBehaviour
         if (grounded && crouching) multiplierV = 0f;
 
         //Apply forces to move player
-        rb.AddForce(orientation.transform.forward * (y * moveSpeed * Time.deltaTime * multiplier * multiplierV));
-        rb.AddForce(orientation.transform.right * (x * moveSpeed * Time.deltaTime * multiplier));
+        rb.AddForce(orientation.transform.forward * y * moveSpeed * Time.deltaTime * multiplier * multiplierV);
+        rb.AddForce(orientation.transform.right * x * moveSpeed * Time.deltaTime * multiplier);
     }
 
     private void Jump()
