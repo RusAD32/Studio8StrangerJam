@@ -580,7 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchor: {fileID: 711117171}
-  magnitude: 1
+  magnitude: 0.2
 --- !u!1 &1293547218
 GameObject:
   m_ObjectHideFlags: 0
