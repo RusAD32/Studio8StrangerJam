@@ -263,7 +263,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 194a7e2c4a9fc5f409dca86a97e93fea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -373,5 +373,75 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 264477892559254244, guid: dd46a737858b43c409d8bcf0c90fb6f4, type: 3}
+    - {fileID: 264477892144085894, guid: dd46a737858b43c409d8bcf0c90fb6f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dd46a737858b43c409d8bcf0c90fb6f4, type: 3}
+--- !u!4 &264477891014585101 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 264477892144085893, guid: dd46a737858b43c409d8bcf0c90fb6f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 264477891014585100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &264477891014585102 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 264477892130544941, guid: dd46a737858b43c409d8bcf0c90fb6f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 264477891014585100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &264477891014585103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 264477892559254255, guid: dd46a737858b43c409d8bcf0c90fb6f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 264477891014585100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &264477891014585104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264477891014585103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bceefa762cb99c43a3a888bdcf85d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCam: {fileID: 264477891014585101}
+  orientation: {fileID: 264477891014585102}
+  moveSpeed: 4500
+  maxSpeed: 20
+  grounded: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 512
+  counterMovement: 0.175
+  maxSlopeAngle: 35
+  slideForce: 400
+  slideCounterMovement: 0.2
+  jumpForce: 550
+--- !u!1 &264477891014585105 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 264477892144085892, guid: dd46a737858b43c409d8bcf0c90fb6f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 264477891014585100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &264477891014585106 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 264477892624319239, guid: dd46a737858b43c409d8bcf0c90fb6f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 264477891014585100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &264477891014585107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264477891014585105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef4435f274b65c54da60ff157d6eb8b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 264477891014585106}
