@@ -76,7 +76,6 @@ public class PlayerDetector : MonoBehaviour
                 float targetZ = vectToTarget.magnitude * Mathf.Sin(newTheta) * Mathf.Sin(newPhi);
                 float targetY = vectToTarget.magnitude * Mathf.Cos(newTheta);
                 Vector3 vectToCastTarget = new Vector3(targetX, targetY, targetZ);
-                DebugSphere.position = orig + vectToCastTarget;
                // Debug.Log(Mathf.Abs(cosBetweenTwoVectors(_transform.forward, vectToCastTarget)));
                 if (Mathf.Abs(cosBetweenTwoVectors(_transform.forward, vectToCastTarget)) < Mathf.Cos(angle))
                 {

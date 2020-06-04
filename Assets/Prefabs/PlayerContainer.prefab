@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 264477892624319239}
+  mov: {fileID: 0}
 --- !u!1 &264477892559254255
 GameObject:
   m_ObjectHideFlags: 0
