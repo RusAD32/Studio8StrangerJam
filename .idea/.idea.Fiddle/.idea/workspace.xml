@@ -3,42 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e0f40e23-f54c-4ca9-a3ee-1469fe77b59a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fiddle/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fiddle/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Fiddle/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fiddle/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fiddle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fiddle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp1_Short.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp1_Short.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp1_ShortDouble.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp1_ShortDouble.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp1_Tall.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp1_Tall.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp1_TallDouble.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp1_TallDouble.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp2_Short.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp2_Short.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp2_ShortDouble.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp2_ShortDouble.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp2_Tall.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp2_Tall.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp2_TallDouble.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Base Meshes/StreetLamp2_TallDouble.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Concrete_basecolor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Concrete_basecolor.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Concrete_emissive.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Concrete_emissive.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Concrete_metallic.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Concrete_metallic.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Concrete_normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Concrete_normal.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Concrete_roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Concrete_roughness.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Wood_basecolor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Wood_basecolor.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Wood_emissive.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Wood_emissive.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Wood_metallic.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Wood_metallic.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Wood_normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Wood_normal.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Wood_roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp1Wood_roughness.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Black_basecolor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Black_basecolor.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Black_emissive.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Black_emissive.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Black_metallic.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Black_metallic.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Black_normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Black_normal.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Black_roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Black_roughness.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Concrete_basecolor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Concrete_basecolor.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Concrete_emissive.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Concrete_emissive.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Concrete_metallic.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Concrete_metallic.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Concrete_normal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Concrete_normal.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Concrete_roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/SpaceZeta_StreetLamps/Materials/StreetLamp2Concrete_roughness.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/TileableBricksWall/Textures/Bricks_diffuse.TGA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/TileableBricksWall/Textures/Bricks_diffuse.TGA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/TileableBricksWall/Textures/Bricks_gloss.TGA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/TileableBricksWall/Textures/Bricks_gloss.TGA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/TileableBricksWall/Textures/Bricks_normal.TGA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/TileableBricksWall/Textures/Bricks_normal.TGA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/TileableBricksWall/Textures/Bricks_specular.TGA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/TileableBricksWall/Textures/Bricks_specular.TGA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForTheMenuBackground/TileableBricksWall/Textures/Height_map.TGA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ForTheMenuBackground/TileableBricksWall/Textures/Height_map.TGA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +15,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23A7799D-A2E9-41B8-8C6D-B790C607D655/73/0fb25234/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menus/PositionRandom.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/eb/cee3c637/Collider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B956647-017D-4DC1-B8D3-D25EEF012467/24/f45d8f2b/Physics.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerDetector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CamShaker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23A7799D-A2E9-41B8-8C6D-B790C607D655/2b/00c1ed83/Bounds.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -61,6 +32,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CamShaker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menus/PositionRandom.cs" />
+        <option value="$PROJECT_DIR$/Assets/PlayerDetector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerDetector.cs" />
       </list>
     </option>
   </component>
@@ -109,6 +82,7 @@
       <workItem from="1591044369222" duration="2498000" />
       <workItem from="1591101730069" duration="3755000" />
       <workItem from="1591195908426" duration="1347000" />
+      <workItem from="1591294780890" duration="9111000" />
     </task>
     <servers />
   </component>
@@ -119,5 +93,15 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1591296068350">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591296068350" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1591302338551">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591302338551" />
   </component>
 </project>
