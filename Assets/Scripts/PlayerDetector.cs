@@ -44,7 +44,7 @@ public class PlayerDetector : MonoBehaviour
         // in radians
         float angularDiamApprox = 2f * Mathf.Atan2(0.5f * diam, dist);
         // per one dimension
-        int raysToCast = (int) Mathf.Ceil(angularDiamApprox * density);
+        int raysToCast = (int)Mathf.Ceil(angularDiamApprox * density);
 
         #endregion
 
@@ -72,24 +72,12 @@ public class PlayerDetector : MonoBehaviour
         #region MainRaycasting
 
         float phi = Mathf.Atan2(vectToTarget.z, vectToTarget.x);
-        float theta = (float) Math.Acos(vectToTarget.y / vectToTarget.magnitude);
+        float theta = (float)Math.Acos(vectToTarget.y / vectToTarget.magnitude);
         for (var i = 0; i <= raysToCast / 2; i++)
         {
             for (var j = 0; j <= raysToCast / 2; j++)
             {
-<<<<<<< HEAD
-                float newPhi = phi + angularDiamApprox * i / raysToCast;
-                float newTheta = theta + angularDiamApprox * j / raysToCast;
-                // ignore it if it's definitely outside the field of view
-                float targetX = vectToTarget.magnitude * Mathf.Sin(newTheta) * Mathf.Cos(newPhi);
-                float targetZ = vectToTarget.magnitude * Mathf.Sin(newTheta) * Mathf.Sin(newPhi);
-                float targetY = vectToTarget.magnitude * Mathf.Cos(newTheta);
-                Vector3 vectToCastTarget = new Vector3(targetX, targetY, targetZ);
-               // Debug.Log(Mathf.Abs(cosBetweenTwoVectors(_transform.forward, vectToCastTarget)));
-                if (Mathf.Abs(cosBetweenTwoVectors(_transform.forward, vectToCastTarget)) < Mathf.Cos(angle))
-=======
                 for (var k = -1; k <= 1; k += 2)
->>>>>>> ad335d8ea2a59b53124ec54edc197495f0b67cfd
                 {
                     float newPhi = phi + angularDiamApprox * i / raysToCast;
                     float newTheta = theta + angularDiamApprox * j / raysToCast;
