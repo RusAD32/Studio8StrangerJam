@@ -29,11 +29,15 @@
         <option value="$PROJECT_DIR$/Assets/Movement.cs" />
         <option value="$PROJECT_DIR$/Assets/camShaker.cs" />
         <option value="$PROJECT_DIR$/Assets/CamShaker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CamShaker.cs" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/Assets/Scripts/MoveCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
+=======
         <option value="$PROJECT_DIR$/Assets/Scripts/Menus/PositionRandom.cs" />
         <option value="$PROJECT_DIR$/Assets/PlayerDetector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerDetector.cs" />
+>>>>>>> master
       </list>
     </option>
   </component>
@@ -80,9 +84,13 @@
       <option name="presentableId" value="Default" />
       <updated>1591044351775</updated>
       <workItem from="1591044369222" duration="2498000" />
+<<<<<<< HEAD
+      <workItem from="1591101730069" duration="9276000" />
+=======
       <workItem from="1591101730069" duration="3755000" />
       <workItem from="1591195908426" duration="1347000" />
       <workItem from="1591294780890" duration="9111000" />
+>>>>>>> master
     </task>
     <servers />
   </component>
@@ -95,6 +103,12 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1591124852955">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591124852955" />
+=======
     <state x="616" y="240" key="run.anything.popup" timestamp="1591296068350">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -103,5 +117,6 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591302338551" />
+>>>>>>> master
   </component>
 </project>
