@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDetector : MonoBehaviour
@@ -16,11 +14,7 @@ public class PlayerDetector : MonoBehaviour
     {
         _transform = GetComponent<Transform>();
     }
-
-    private void Update()
-    {
-    }
-
+    
     public bool SeePlayer()
     {
         Physics.SyncTransforms();
@@ -32,7 +26,7 @@ public class PlayerDetector : MonoBehaviour
         var bounds = player.bounds;
         Vector3 targetCenter = bounds.center;
         Vector3 targetSize = bounds.size;
-        // lentgh of the diagonal of the bounding box
+        // length of the diagonal of the bounding box
         float diam = targetSize.magnitude;
         Vector3 vectToTarget = targetCenter - orig;
         // let's save some computational cycles
