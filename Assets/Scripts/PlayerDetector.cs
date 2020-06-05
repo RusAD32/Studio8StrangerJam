@@ -21,54 +21,63 @@ public class PlayerDetector : MonoBehaviour
     {
     }
 
-    bool SeePlayer()
+    public bool SeePlayer()
     {
+        #region clipping
+
         Physics.SyncTransforms();
-        var bounds = player.bounds;
-        Vector3 targetCenter = bounds.center;
-        Vector3 targetSize = bounds.size;
-        // lentgh of the diagonal of the bounding box
-        float diam = Mathf.Sqrt(targetSize.x * targetSize.x + targetSize.y * targetSize.y + targetSize.z * targetSize.z);
+        Bounds bounds = player.bounds;
         Vector3 orig = _transform.position;
-        Vector3 vectToTarget = targetCenter - orig;
-        float dist = player.bounds.ClosestPoint(orig).magnitude;
+        Vector3 closestPt = bounds.ClosestPoint(orig);
         // let's save some computational cycles
-        if (dist > distance)
+        if (distance * distance < closestPt.sqrMagnitude)
         {
             return false;
         }
+
+        Vector3 targetCenter = bounds.center;
+        Vector3 targetSize = bounds.size;
+        // lentgh of the diagonal of the bounding box
+        float diam = targetSize.magnitude;
+        Vector3 vectToTarget = targetCenter - orig;
+        float dist = closestPt.magnitude;
         // in radians
-        float angularDiamApprox = 2f * Mathf.Atan(0.5f * diam / dist);
+        float angularDiamApprox = 2f * Mathf.Atan2(0.5f * diam, dist);
         // per one dimension
-        int raysToCast = (int)Mathf.Ceil(angularDiamApprox * density);
-        Vector3 lookVector = _transform.forward.normalized * distance;
-        // in this case, rather than scanning the bottom-left corner, let's scan the center of the object 
+        int raysToCast = (int) Mathf.Ceil(angularDiamApprox * density);
+
+        #endregion
+
+        #region tooFewRays
+
         if (raysToCast == 1)
         {
             // if it's outside of our FOV, throw it out
-            Debug.Log(_transform.forward);
-            Debug.Log(vectToTarget);
-            Debug.Log(cosBetweenTwoVectors(_transform.forward, vectToTarget));
-            Debug.Log("\n");
             if (cosBetweenTwoVectors(_transform.forward, vectToTarget) < Mathf.Cos(angle))
             {
                 return false;
             }
+
             RaycastHit res;
             if (Physics.Raycast(orig, vectToTarget, out res, distance))
             {
                 return res.collider == player;
             }
-            
         }
 
-        
-        float phi = Mathf.Atan2(vectToTarget.z, vectToTarget.x) - angularDiamApprox / 2;
-        float theta = (float) Math.Acos(vectToTarget.y / vectToTarget.magnitude) - angularDiamApprox / 2;
-        for (var i = 0; i < raysToCast; i++)
+        #endregion
+
+        // in this case, rather than scanning the bottom-left corner, let's scan the center of the object 
+
+        #region MainRaycasting
+
+        float phi = Mathf.Atan2(vectToTarget.z, vectToTarget.x);
+        float theta = (float) Math.Acos(vectToTarget.y / vectToTarget.magnitude);
+        for (var i = 0; i <= raysToCast / 2; i++)
         {
-            for (var j = 0; j < raysToCast; j++)
+            for (var j = 0; j <= raysToCast / 2; j++)
             {
+<<<<<<< HEAD
                 float newPhi = phi + angularDiamApprox * i / raysToCast;
                 float newTheta = theta + angularDiamApprox * j / raysToCast;
                 // ignore it if it's definitely outside the field of view
@@ -78,18 +87,33 @@ public class PlayerDetector : MonoBehaviour
                 Vector3 vectToCastTarget = new Vector3(targetX, targetY, targetZ);
                // Debug.Log(Mathf.Abs(cosBetweenTwoVectors(_transform.forward, vectToCastTarget)));
                 if (Mathf.Abs(cosBetweenTwoVectors(_transform.forward, vectToCastTarget)) < Mathf.Cos(angle))
+=======
+                for (var k = -1; k <= 1; k += 2)
+>>>>>>> ad335d8ea2a59b53124ec54edc197495f0b67cfd
                 {
-                    continue;
+                    float newPhi = phi + angularDiamApprox * i / raysToCast;
+                    float newTheta = theta + angularDiamApprox * j / raysToCast;
+                    // ignore it if it's definitely outside the field of view
+                    float targetX = vectToTarget.magnitude * Mathf.Sin(newTheta) * Mathf.Cos(newPhi);
+                    float targetZ = vectToTarget.magnitude * Mathf.Sin(newTheta) * Mathf.Sin(newPhi);
+                    float targetY = vectToTarget.magnitude * Mathf.Cos(newTheta);
+                    Vector3 vectToCastTarget = new Vector3(targetX, targetY, targetZ);
+                    if (cosBetweenTwoVectors(_transform.forward, vectToCastTarget) < Mathf.Cos(angle))
+                    {
+                        continue;
+                    }
+
+                    if (Physics.Raycast(orig, vectToCastTarget, out RaycastHit res, distance) &&
+                        res.collider == player)
+                    {
+                        return true;
+                    }
                 }
-                RaycastHit res;
-                if (Physics.Raycast(orig, vectToCastTarget, out res, distance) && res.collider == player)
-                { 
-                    return true;
-                }
-                
             }
         }
-        
+
+        #endregion
+
         return false;
     }
 
@@ -97,6 +121,4 @@ public class PlayerDetector : MonoBehaviour
     {
         return (a.x * b.x + a.y * b.y + a.z * b.z) / (a.magnitude * b.magnitude);
     }
-    
-    
 }
