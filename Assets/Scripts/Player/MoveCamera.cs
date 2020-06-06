@@ -26,7 +26,7 @@ public class MoveCamera : MonoBehaviour
         else
         {
             Vector3 move = (_targetPos - transform.position).normalized * (curSpeed * Time.deltaTime);
-            transform.position += move;
+            transform.position = new Vector3(_targetPos.x, transform.position.y + move.y, _targetPos.z);
         }
     }
 }

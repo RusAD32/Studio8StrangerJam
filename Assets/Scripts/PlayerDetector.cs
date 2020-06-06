@@ -28,7 +28,7 @@ public class PlayerDetector : MonoBehaviour
         Physics.SyncTransforms();
         Bounds bounds = player.bounds;
         Vector3 orig = _transform.position;
-        Vector3 closestPt = bounds.ClosestPoint(orig);
+        Vector3 closestPt = bounds.ClosestPoint(orig) - orig;
         // let's save some computational cycles
         if (distance * distance < closestPt.sqrMagnitude)
         {
@@ -90,7 +90,7 @@ public class PlayerDetector : MonoBehaviour
                     {
                         continue;
                     }
-
+                    Debug.DrawRay(orig, vectToCastTarget);    
                     if (Physics.Raycast(orig, vectToCastTarget, out RaycastHit res, distance) &&
                         res.collider == player)
                     {
