@@ -2,32 +2,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerDetector : MonoBehaviour
 {
+    [Tooltip("Position of the object that should scan for the player")]
+    public Transform detector;
+    [Tooltip("Object to search for")]
     public Collider player;
+    [Tooltip("Distance of the FOV")]
     public float distance = 100f;
+    [Tooltip("Angle of the FOV")]
     public float angle = Mathf.PI / 3;
+    [Tooltip("How many rays per radian to cast (more rays, more precision, less speed)")]
     public float density = 10f;
-    private Transform _transform;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _transform = GetComponent<Transform>();
-    }
-
-    private void Update()
-    {
-    }
-
+    
     public bool SeePlayer()
     {
         #region clipping
 
         Physics.SyncTransforms();
         Bounds bounds = player.bounds;
-        Vector3 orig = _transform.position;
+        Vector3 orig = detector.position;
         Vector3 closestPt = bounds.ClosestPoint(orig) - orig;
         // let's save some computational cycles
         if (distance * distance < closestPt.sqrMagnitude)
@@ -53,7 +49,7 @@ public class PlayerDetector : MonoBehaviour
         if (raysToCast == 1)
         {
             // if it's outside of our FOV, throw it out
-            if (cosBetweenTwoVectors(_transform.forward, vectToTarget) < Mathf.Cos(angle))
+            if (cosBetweenTwoVectors(detector.forward, vectToTarget) < Mathf.Cos(angle))
             {
                 return false;
             }
@@ -86,7 +82,7 @@ public class PlayerDetector : MonoBehaviour
                     float targetZ = vectToTarget.magnitude * Mathf.Sin(newTheta) * Mathf.Sin(newPhi);
                     float targetY = vectToTarget.magnitude * Mathf.Cos(newTheta);
                     Vector3 vectToCastTarget = new Vector3(targetX, targetY, targetZ);
-                    if (cosBetweenTwoVectors(_transform.forward, vectToCastTarget) < Mathf.Cos(angle))
+                    if (cosBetweenTwoVectors(detector.forward, vectToCastTarget) < Mathf.Cos(angle))
                     {
                         continue;
                     }
