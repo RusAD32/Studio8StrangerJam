@@ -6,8 +6,6 @@ using UnityEngine.Serialization;
 
 public class PlayerDetector : MonoBehaviour
 {
-    [Tooltip("Position of the object that should scan for the player")]
-    public Transform detector;
     [Tooltip("Object to search for")]
     public Collider player;
     [Tooltip("Distance of the FOV")]
@@ -23,7 +21,7 @@ public class PlayerDetector : MonoBehaviour
 
         Physics.SyncTransforms();
         Bounds bounds = player.bounds;
-        Vector3 orig = detector.position;
+        Vector3 orig = transform.position;
         Vector3 closestPt = bounds.ClosestPoint(orig) - orig;
         // let's save some computational cycles
         if (distance * distance < closestPt.sqrMagnitude)
@@ -49,7 +47,7 @@ public class PlayerDetector : MonoBehaviour
         if (raysToCast == 1)
         {
             // if it's outside of our FOV, throw it out
-            if (cosBetweenTwoVectors(detector.forward, vectToTarget) < Mathf.Cos(angle))
+            if (cosBetweenTwoVectors(transform.forward, vectToTarget) < Mathf.Cos(angle))
             {
                 return false;
             }
@@ -82,7 +80,7 @@ public class PlayerDetector : MonoBehaviour
                     float targetZ = vectToTarget.magnitude * Mathf.Sin(newTheta) * Mathf.Sin(newPhi);
                     float targetY = vectToTarget.magnitude * Mathf.Cos(newTheta);
                     Vector3 vectToCastTarget = new Vector3(targetX, targetY, targetZ);
-                    if (cosBetweenTwoVectors(detector.forward, vectToCastTarget) < Mathf.Cos(angle))
+                    if (cosBetweenTwoVectors(transform.forward, vectToCastTarget) < Mathf.Cos(angle))
                     {
                         continue;
                     }
