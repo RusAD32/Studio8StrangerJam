@@ -53,7 +53,7 @@ public class PlayerDetector : MonoBehaviour
             }
 
             RaycastHit res;
-            if (Physics.Raycast(orig, vectToTarget, out res, distance))
+            if (Physics.Raycast(orig, vectToTarget, out res, dist + diam))
             {
                 return res.collider == player;
             }
@@ -85,7 +85,7 @@ public class PlayerDetector : MonoBehaviour
                         continue;
                     }
                     Debug.DrawRay(orig, vectToCastTarget);    
-                    if (Physics.Raycast(orig, vectToCastTarget, out RaycastHit res, distance) &&
+                    if (Physics.Raycast(orig, vectToCastTarget, out RaycastHit res, dist + diam) &&
                         res.collider == player)
                     {
                         return true;
