@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     //Assingables
+    public DeathMenu ded;
     public Transform playerCam;
     public Transform orientation;
 
@@ -91,7 +91,15 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetKeyUp(KeyCode.LeftShift))
             StopSprinting();
-        
+
+        if (ded.isPaused)
+        {
+            sensitivity = 0f;
+        }
+        if (!ded.isPaused)
+        {
+            sensitivity = 50f;
+        }
     }
 
     private void StartCrouch()
