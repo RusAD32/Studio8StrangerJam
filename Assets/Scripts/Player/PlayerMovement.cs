@@ -1,10 +1,12 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     //Assingables
+    public DeathMenu ded;
     public Transform playerCam;
     public Transform orientation;
 
@@ -84,20 +86,27 @@ public class PlayerMovement : MonoBehaviour
             StartCrouch();
         if (Input.GetKeyUp(KeyCode.LeftControl))
             StopCrouch();
+        CrouchSmooth();
 
         //Sprinting
         if (Input.GetKeyDown(KeyCode.LeftShift))
             StartSprinting();
-        
+
         if (Input.GetKeyUp(KeyCode.LeftShift))
             StopSprinting();
-        
+
+        if (ded.isPaused)
+        {
+            sensitivity = 0f;
+        }
+        if (!ded.isPaused)
+        {
+            sensitivity = 50f;
+        }
     }
 
     private void StartCrouch()
     {
-        transform.localScale = crouchScale;
-        transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
         if (rb.velocity.magnitude > 0.5f)
         {
             if (grounded)
@@ -109,8 +118,28 @@ public class PlayerMovement : MonoBehaviour
 
     private void StopCrouch()
     {
-        transform.localScale = playerScale;
-        transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+        //transform.localScale = playerScale;
+    }
+
+    private void CrouchSmooth()
+    {
+        if (crouching && transform.localScale.magnitude > crouchScale.magnitude)
+        {
+            var delta = (crouchScale - playerScale) * (Time.deltaTime * 10f);
+            transform.localScale += delta;
+            transform.position += delta;
+            if (transform.localScale.magnitude < crouchScale.magnitude)
+            {
+                transform.localScale = crouchScale;
+            }
+        } else if (!crouching && transform.localScale.magnitude < playerScale.magnitude)
+        {
+            transform.localScale += (playerScale - crouchScale) * (Time.deltaTime * maxSpeed);
+            if (transform.localScale.magnitude > playerScale.magnitude)
+            {
+                transform.localScale = playerScale;
+            }
+        }
     }
 
     private void StartSprinting()
@@ -126,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
     private void Movement()
     {
         //Extra gravity
-        rb.AddForce(Vector3.down * Time.deltaTime * 10);
+        rb.AddForce(Vector3.down * (Time.deltaTime * 10));
 
         //Find actual velocity relative to where player is looking
         Vector2 mag = FindVelRelativeToLook();
@@ -144,7 +173,7 @@ public class PlayerMovement : MonoBehaviour
         //If sliding down a ramp, add force down so player stays grounded and also builds speed
         if (crouching && grounded && readyToJump)
         {
-            rb.AddForce(Vector3.down * Time.deltaTime * 3000);
+            rb.AddForce(Vector3.down * (Time.deltaTime * 3000));
             return;
         }
 
@@ -168,8 +197,8 @@ public class PlayerMovement : MonoBehaviour
         if (grounded && crouching) multiplierV = 0f;
 
         //Apply forces to move player
-        rb.AddForce(orientation.transform.forward * y * moveSpeed * Time.deltaTime * multiplier * multiplierV);
-        rb.AddForce(orientation.transform.right * x * moveSpeed * Time.deltaTime * multiplier);
+        rb.AddForce(orientation.transform.forward * (y * moveSpeed * Time.deltaTime * multiplier * multiplierV));
+        rb.AddForce(orientation.transform.right * (x * moveSpeed * Time.deltaTime * multiplier));
     }
 
     private void Jump()
@@ -179,8 +208,8 @@ public class PlayerMovement : MonoBehaviour
             readyToJump = false;
 
             //Add jump forces
-            rb.AddForce(Vector2.up * jumpForce * 1.5f);
-            rb.AddForce(normalVector * jumpForce * 0.5f);
+            rb.AddForce(Vector2.up * (jumpForce * 1.5f));
+            rb.AddForce(normalVector * (jumpForce * 0.5f));
 
             //If jumping while falling, reset y velocity.
             Vector3 vel = rb.velocity;
@@ -199,11 +228,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private float desiredX;
+
     private void Look()
     {
         float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
-
         //Find current look rotation
         Vector3 rot = playerCam.transform.localRotation.eulerAngles;
         desiredX = rot.y + mouseX;
@@ -229,11 +258,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Counter movement
-        if (Math.Abs(mag.x) > threshold && Math.Abs(x) < 0.05f || (mag.x < -threshold && x > 0) || (mag.x > threshold && x < 0))
+        if (Math.Abs(mag.x) > threshold && Math.Abs(x) < 0.05f || (mag.x < -threshold && x > 0) ||
+            (mag.x > threshold && x < 0))
         {
             rb.AddForce(orientation.transform.right * (moveSpeed * Time.deltaTime * -mag.x * counterMovement));
         }
-        if (Math.Abs(mag.y) > threshold && Math.Abs(y) < 0.05f || (mag.y < -threshold && y > 0) || (mag.y > threshold && y < 0))
+
+        if (Math.Abs(mag.y) > threshold && Math.Abs(y) < 0.05f || (mag.y < -threshold && y > 0) ||
+            (mag.y > threshold && y < 0))
         {
             rb.AddForce(orientation.transform.forward * (moveSpeed * Time.deltaTime * -mag.y * counterMovement));
         }
@@ -311,5 +343,4 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded = false;
     }
-
 }
