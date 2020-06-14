@@ -1,22 +1,26 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Totems : MonoBehaviour
 {
-    public bool isTaken = false;
+    public bool isTaken;
+    public float timeToDestroy = 0.2f;
+
+    public AudioSource tick;
 
     void Start()
     {
         isTaken = false;
+        tick.Stop();
     }
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
             isTaken = true;
+            tick.Play();
+            Destroy(gameObject, timeToDestroy);
         }
     }
 }

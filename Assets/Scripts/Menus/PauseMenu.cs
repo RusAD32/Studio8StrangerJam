@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DeathMenu : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
     public GameObject deathPanel;
     public bool isPaused;
@@ -41,6 +41,11 @@ public class DeathMenu : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+    
+    public void Restart()
+    {
+        SceneManager.LoadScene("Level_1");
     }
 
     public void Quit()

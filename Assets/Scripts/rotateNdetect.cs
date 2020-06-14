@@ -22,7 +22,7 @@ public class rotateNdetect : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Rotate(transform.up, _spd*Time.deltaTime);
+        
         if (_playerDetector.SeePlayer())
         {
             _mat.color = Color.red;
@@ -33,6 +33,7 @@ public class rotateNdetect : MonoBehaviour
         }
         else
         {
+            transform.Rotate(transform.up, _spd*Time.deltaTime);
             _mat.color = Color.gray;
         }
     }

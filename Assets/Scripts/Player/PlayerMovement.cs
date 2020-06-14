@@ -1,14 +1,16 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor;
 
 public class PlayerMovement : MonoBehaviour
 {
     //Assingables
-    public DeathMenu ded;
+    public PauseMenu ded;
     public Transform playerCam;
     public Transform orientation;
 
-    //Other
+    //Rigidbody
     private Rigidbody rb;
 
     //Rotation and look
@@ -26,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private float threshold = 0.01f;
     public float maxSlopeAngle = 35f;
 
-    //Crouch & Slide
+    //Crouch
     private Vector3 crouchScale = new Vector3(1, 0.5f, 1);
     private Vector3 playerScale;
     public float slideForce = 400;
@@ -44,6 +46,11 @@ public class PlayerMovement : MonoBehaviour
     //Sliding
     private Vector3 normalVector = Vector3.up;
     private Vector3 wallNormalVector;
+
+    //Battery
+    public FlashLightToggle flashlight;
+
+    public AudioSource footstep;
 
     void Awake()
     {
@@ -84,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
             StartCrouch();
         if (Input.GetKeyUp(KeyCode.LeftControl))
             StopCrouch();
-        CrouchSmooth();
+            CrouchSmooth();
 
         //Sprinting
         if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -142,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StartSprinting()
     {
-        maxSpeed = 40f;
+        maxSpeed = 35f;
     }
 
     private void StopSprinting()
@@ -197,6 +204,8 @@ public class PlayerMovement : MonoBehaviour
         //Apply forces to move player
         rb.AddForce(orientation.transform.forward * (y * moveSpeed * Time.deltaTime * multiplier * multiplierV));
         rb.AddForce(orientation.transform.right * (x * moveSpeed * Time.deltaTime * multiplier));
+
+        footstep.Play();
     }
 
     private void Jump()
@@ -206,8 +215,8 @@ public class PlayerMovement : MonoBehaviour
             readyToJump = false;
 
             //Add jump forces
-            rb.AddForce(Vector2.up * jumpForce * 1.5f);
-            rb.AddForce(normalVector * jumpForce * 0.5f);
+            rb.AddForce(Vector2.up * (jumpForce * 1.5f));
+            rb.AddForce(normalVector * (jumpForce * 0.5f));
 
             //If jumping while falling, reset y velocity.
             Vector3 vel = rb.velocity;
@@ -231,7 +240,6 @@ public class PlayerMovement : MonoBehaviour
     {
         float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
-
         //Find current look rotation
         Vector3 rot = playerCam.transform.localRotation.eulerAngles;
         desiredX = rot.y + mouseX;
